@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Tatiana 💖</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        overflow: hidden;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        max-width: 360px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 30px;
+        line-height: 1.5;
+    }
+
+    button {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 10px;
+        transition: all 0.3s ease;
+    }
+
+    #yes {
+        background: #ff4d6d;
+        color: white;
+    }
+
+    #no {
+        background: #ffffff;
+        color: #ff4d6d;
+        position: absolute;
+    }
+</style>
+</head>
+
+<body>
+<div class="card" id="card">
+    <h1>💖 Tatiana 💖</h1>
+    <p>
+        Desde que llegaste a mi vida,  
+        todo se siente más bonito,  
+        más tranquilo y más real.
+        <br><br>
+        No imagino este día sin ti…
+        <br><br>
+        ¿Quieres ser mi San Valentín? 💌
+    </p>
+
+    <button id="yes">Sí, quiero 💕</button>
+    <button id="no">No 🙈</button>
+</div>
+
+<script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const card = document.getElementById("card");
+
+    function moveButton() {
+        const x = Math.random() * (window.innerWidth - 120);
+        const y = Math.random() * (window.innerHeight - 60);
+        noBtn.style.left = `${x}px`;
+        noBtn.style.top = `${y}px`;
+    }
+
+    noBtn.addEventListener("mouseover", moveButton);
+    noBtn.addEventListener("click", moveButton);
+
+    yesBtn.addEventListener("click", () => {
+        card.innerHTML = `
+            <h1>💘 Gracias, Tatiana 💘</h1>
+            <p>
+                Prometo cuidarte,  
+                hacerte reír  
+                y demostrarte cada día  
+                lo importante que eres para mí.
+                <br><br>
+                Feliz San Valentín 💐  
+                Con amor, Kevin ❤️
+            </p>
+        `;
+    });
+</script>
+</body>
+</html>
